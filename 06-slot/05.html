@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <style>
+    .flex {
+      display: flex;
+    }
+    .justify-space-between {
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <daftar-tombol>
+      <template #konten-kiri="">
+        <button>Ini Tombol Kiri</button>
+      </template>
+      <template #konten-kanan="">
+        <button>Ini Tombol Kanan</button>
+      </template>
+    </daftar-tombol>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component('daftar-tombol', {
+      template: `
+        <nav class="flex justify-space-between">
+          <slot name="konten-kiri"/>
+          <slot name="konten-kanan"/>
+        </nav>
+      `
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <komponen-tombol />
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const mixin = {
+      data() {
+        return {
+          teks: 'Ini Mixin'
+        }
+      },
+      methods: {
+        ketikaPeristiwaTerjadi() {
+          alert('Dari mixin')
+        }
+      }
+    }
+
+    Vue.component('komponen-tombol', {
+      template: `
+        <button @click="ketikaPeristiwaTerjadi">
+          {{ teks }}
+        </button>
+      `,
+      mixins: [
+        mixin
+      ]
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

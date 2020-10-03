@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <komponen-tombol
+      konten="1"
+      :apakah-muncul="false"
+    ></komponen-tombol>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script>
+    Vue.component('komponen-tombol', {
+      props: {
+        konten: String,
+        apakahMuncul: Boolean
+      },
+      template: `
+        <button v-if="apakahMuncul">
+          {{ konten }}
+        </button>`
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+section {
+  padding: 30px;
+}
+
+button,
+input,
+select,
+textarea {
+  border: 1px solid #1a202c;
+  padding: 5px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+button[disabled] {
+  color: rgba(26, 32, 44, .3);
+  border: 1px solid rgba(26, 32, 44, .3);
+  cursor: default;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.opsi-formulir-input-kode,
+.tampilan-kode {
+  margin: 20px;
+  max-width: 500px;
+}
+
+.opsi-formulir-input-kode,
+.input-kode {
+  width: 100%;
+  height: 500px;
+}
+
+.tampilan-kode--kustom {
+  margin-top: 40px
+}

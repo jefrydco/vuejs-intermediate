@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <komponen-tombol></komponen-tombol>
+    <komponen-tampilan></komponen-tampilan>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script>
+    const eventHub = new Vue()
+
+    Vue.component('komponen-tombol', {
+      data() {
+        return {
+          nilaiKomponenTombol: 0
+        }
+      },
+      template: `
+        <button
+          @click="ketikaPeristiwaKlik"
+        >
+          Ini Tombol
+        </button>`,
+      methods: {
+        ketikaPeristiwaKlik() {
+          this.nilaiKomponenTombol += 1
+
+          eventHub.$emit('peristiwa-klik', {
+            nilai: this.nilaiKomponenTombol
+          })
+        }
+      }
+    })
+
+    Vue.component('komponen-tampilan', {
+      template: `
+        <div>{{ nilaiKomponenTampilan }}</div>
+      `,
+      data() {
+        return {
+          nilaiKomponenTampilan: 0
+        }
+      },
+      created() {
+        eventHub.$on('peristiwa-klik', this.tampilkanNilai)
+      },
+      methods: {
+        tampilkanNilai(peristiwa) {
+          this.nilaiKomponenTampilan = peristiwa.nilai
+        }
+      }
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

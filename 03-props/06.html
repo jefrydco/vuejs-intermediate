@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <style>
+    .biru {
+      background-color: #4299e1;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <komponen-tombol
+      konten="Ini Tombol"
+      warna-latar-belakang="biru"
+    ></komponen-tombol>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script>
+    Vue.component('komponen-tombol', {
+      props: {
+        konten: String,
+        warnaLatarBelakang: {
+          type: String,
+          validator(nilai) {
+            return ['merah', 'biru', 'hijau'].includes(nilai)
+          }
+        }
+      },
+      template: `
+        <button :class="warnaLatarBelakang">
+          {{ konten }}
+        </button>`
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

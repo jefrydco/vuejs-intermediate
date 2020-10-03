@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <daftar-tombol #default="{ daftarTombol }">
+      <button v-for="tombol in daftarTombol">
+        {{ tombol }}
+      </button>
+    </daftar-tombol>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component('daftar-tombol', {
+      template: `
+        <nav>
+          <slot :daftar-tombol="daftarTombol" />
+        </nav>
+      `,
+      data() {
+        return {
+          daftarTombol: ['Tombol 1', 'Tombol 2']
+        }
+      }
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>

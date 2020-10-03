@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <komponen-daftar-tombol
+      :daftar-tombol="[
+        'Tombol 1', 
+        'Tombol 2',
+        'Tombol 3'
+      ]"
+      :gaya="{
+        backgroundColor: '#4299e1',
+        color: '#fff'
+      }"
+      :ketika-peristiwa-klik="ketikaPeristiwaKlik"
+    ></komponen-daftar-tombol>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <script>
+    Vue.component('komponen-daftar-tombol', {
+      props: {
+        daftarTombol: Array,
+        gaya: Object,
+        ketikaPeristiwaKlik: Function
+      },
+      template: `
+        <nav>
+          <button
+            v-for="tombol in daftarTombol"
+            :style="gaya"
+            @click="ketikaPeristiwaKlik">
+          {{ tombol }}
+          </button>
+        </nav>`
+    })
+
+    new Vue({
+      el: '#app',
+      methods: {
+        ketikaPeristiwaKlik() {
+          alert('Halo Dunia!')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

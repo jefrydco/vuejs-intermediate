@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <komponen-tombol />
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component('komponen-tombol', {
+      template: `
+        <div>
+          <button>Komponen Tombol 1</button>
+          <button>Komponen Tombol 2</button>
+        </div>
+      `
+    })
+
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+</html>
