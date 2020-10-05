@@ -6,12 +6,12 @@
 
 Read this description in another languages:
 
-- [🇮🇩 Indonesian](./readme.md)
+- [🇮🇩 Indonesian](./readme-id.md)
 
 ## Description
 
-<!-- - [Slide](https://bit.ly/slide-vuejs)
-- [Source Code](https://bit.ly/kode-vuejs)
-- [Playback Record](https://bit.ly/playback-vuejs)
-- [Submission Form](https://bit.ly/belajar-vuejs)
-- [Application Example](https://bit.ly/contoh-vuejs) -->
+- [Slide](https://bit.ly/vuejs-vuex)
+- [Source Code](https://github.com/jefrydco/vuejs-intermediate)
+<!-- - [Playback Record](https://bit.ly/playback-vuejs) -->
+- [Submission Form](http://bit.ly/SubmisiVueHimit)
+- [Application Example](https://vuejs-intermediate-vuex.netlify.app/)

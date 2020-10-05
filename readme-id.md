@@ -10,8 +10,8 @@ Baca deskripsi ini dalam bahasa lain:
 
 ## Deskripsi
 
-<!-- - [Salindia (_Slide_)](https://bit.ly/slide-vuejs)
-- [Kode Sumber](https://bit.ly/kode-vuejs)
-- [Rekaman Ulang](https://bit.ly/playback-vuejs)
-- [Formulir Submisi](https://bit.ly/belajar-vuejs)
-- [Contoh Aplikasi](https://bit.ly/contoh-vuejs) -->
+- [Salindia (_Slide_)](https://bit.ly/vuejs-vuex)
+- [Kode Sumber](https://github.com/jefrydco/vuejs-intermediate)
+<!-- - [Rekaman Ulang](https://bit.ly/playback-vuejs) -->
+- [Formulir Submisi](http://bit.ly/SubmisiVueHimit)
+- [Contoh Aplikasi](https://vuejs-intermediate-vuex.netlify.app/)
