@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VueRouter from 'vue-router'
 
 import './assets/normalize.css'
 import './assets/highlighter.css'
@@ -24,7 +25,7 @@ import proses from './store/proses'
 
 Vue.config.productionTip = false
 
-Vue.use(Vuex)
+Vue.use([Vuex, VueRouter])
 Vue.component(DataCode.name, DataCode)
 Vue.component(DataLsp.name, DataLsp)
 Vue.component(DataErr.name, DataErr)
