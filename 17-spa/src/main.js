@@ -28,7 +28,8 @@ import '@inkline/inkline/dist/inkline.css';
 
 Vue.config.productionTip = false
 
-Vue.use([Vuex, VueRouter, Inkline, {components}])
+Vue.use(Vuex)
+Vue.use([VueRouter, Inkline, {components}])
 Vue.component(DataCode.name, DataCode)
 Vue.component(DataLsp.name, DataLsp)
 Vue.component(DataErr.name, DataErr)
