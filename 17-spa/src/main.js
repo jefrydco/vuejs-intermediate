@@ -23,11 +23,12 @@ import kode from './store/kode'
 import notifikasi from './store/notifikasi'
 import proses from './store/proses'
 import Inkline from '@inkline/inkline';
+import * as components from '@inkline/inkline/src/components'
 import '@inkline/inkline/dist/inkline.css';
 
 Vue.config.productionTip = false
 
-Vue.use([Vuex, VueRouter, Inkline])
+Vue.use([Vuex, VueRouter, Inkline, {components}])
 Vue.component(DataCode.name, DataCode)
 Vue.component(DataLsp.name, DataLsp)
 Vue.component(DataErr.name, DataErr)
