@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VueRouter from 'vue-router'
 
 import './assets/normalize.css'
 import './assets/highlighter.css'
@@ -17,14 +18,21 @@ import AppFormulirAreaTeks from './components/AppFormulirAreaTeks'
 import AppFormulirInput from './components/AppFormulirInput'
 import AppFormulirPilihan from './components/AppFormulirPilihan'
 
+import AppLoginPage from './components/halaman/AppLogin'
+
 import pengguna from './store/pengguna'
 import kode from './store/kode'
 import notifikasi from './store/notifikasi'
 import proses from './store/proses'
+import Inkline from '@inkline/inkline'
+import * as components from '@inkline/inkline/src/components'
+import '@inkline/inkline/dist/inkline.css'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
+Vue.use(VueRouter)
+Vue.use(Inkline, {components})
 Vue.component(DataCode.name, DataCode)
 Vue.component(DataLsp.name, DataLsp)
 Vue.component(DataErr.name, DataErr)
@@ -47,7 +55,25 @@ const store = new Vuex.Store({
   }
 })
 
+const routes = [
+  { 
+    path: '/', 
+    component: AppLoginPage,
+    beforeEnter: (to) => {
+      console.log(to)
+    } 
+  },
+  { path: '/login', component: AppLoginPage },
+  { path: '/convert', component: AppLoginPage }
+]
+
+const router = new VueRouter({
+  routes,
+  mode: 'history'
+})
+
 new Vue({
   render: h => h(App),
-  store: store
+  router: router,
+  store: store,
 }).$mount('#app')
