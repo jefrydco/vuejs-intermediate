@@ -19,6 +19,7 @@ import AppFormulirInput from './components/AppFormulirInput'
 import AppFormulirPilihan from './components/AppFormulirPilihan'
 
 import AppLoginPage from './components/halaman/AppLogin'
+import AppConvertPage from './components/halaman/AppConvert'
 
 import pengguna from './store/pengguna'
 import kode from './store/kode'
@@ -64,7 +65,7 @@ const routes = [
     } 
   },
   { path: '/login', component: AppLoginPage },
-  { path: '/convert', component: AppLoginPage }
+  { path: '/convert', component: AppConvertPage }
 ]
 
 const router = new VueRouter({
