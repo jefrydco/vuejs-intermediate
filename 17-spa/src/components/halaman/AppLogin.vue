@@ -25,32 +25,58 @@
                     </div>
                     <div class="input-wrapper">
                         <i-input v-show="toggled == false" v-model="namaMasuk" placeholder="Masukkan Nama">
-                            <i-button slot="append">Masuk</i-button>
+                            <i-button slot="append" @click="ketikaTombolMasukDiKlik">MASUK</i-button>
                         </i-input>
                         <i-input v-show="toggled == true" v-model="namaDaftar" placeholder="Masukkan Nama">
-                            <i-button slot="append">DAFTAR</i-button>
+                            <i-button slot="append" @click="ketikaTombolDaftarDiKlik">DAFTAR</i-button>
                         </i-input>
                     </div>
                 </div>
             </i-column>
         </i-row>
     </i-container>
+
+    <app-notifikasi />
+    <app-proses />
   </section>
 </template>
 
 <script>
+import AppNotifikasi from '../AppNotifikasi'
+import AppProses from '../AppProses'
+
 export default {
+    components: {
+        AppNotifikasi,
+        AppProses
+    },
     data(){
         return {
-            namaMasuk: '',
+            namaMasuk: 'yuza',
             namaDaftar: '',
             toggled: false
         }
+    },
+    methods: {
+    ketikaTombolMasukDiKlik() {
+        this.$store.dispatch('pengguna/masuk', {
+            namaPengguna: this.namaMasuk
+        })
+    },
+    ketikaTombolDaftarDiKlik() {
+        this.$store.dispatch('pengguna/daftar', {
+            namaPengguna: this.namaDaftar
+        })
     }
+    // ketikaTombolKeluarDiKlik() {
+    //     this.$store.dispatch('pengguna/keluar')
+    //     this.$emit('keluar')
+    // }
+  }
 }
 </script>
 
-<style>
+<style scoped>
 section {
     height: 100vh;
     background-color: #56BAED;
