@@ -11,6 +11,7 @@ function state() {
 const mutations = {
   aturDaftarKode(state, { daftarKode }) {
     state.daftarKode = daftarKode
+    console.log(state.daftarKode)
   },
   resetDaftarKode(state) {
     state.daftarKode = []
@@ -48,7 +49,7 @@ const actions = {
       commit('resetDaftarKode')
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu1'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
@@ -86,7 +87,7 @@ const actions = {
     } catch (error) {
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu2'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
@@ -125,7 +126,7 @@ const actions = {
     } catch (error) {
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu3'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
@@ -157,7 +158,7 @@ const actions = {
     } catch (error) {
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu4'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
