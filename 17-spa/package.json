@@ -11,6 +11,7 @@
     "@inkline/inkline": "^2.0.0",
     "boolean": "^3.0.1",
     "clean-deep": "^3.4.0",
+    "cookie-encryption": "^1.7.0",
     "core-js": "^3.6.5",
     "debounce-fn": "^4.0.0",
     "escape-goat": "^3.0.0",
