@@ -64,14 +64,17 @@ export default {
         })
     },
     ketikaTombolDaftarDiKlik() {
-        this.$store.dispatch('pengguna/daftar', {
-            namaPengguna: this.namaDaftar
-        })
+        let newName = this.namaDaftar
+        if (newName.length <= 10 || !newName.match(/[a-z]/i)) {
+            console.log('good!')
+            this.$store.dispatch('pengguna/daftar', {
+                namaPengguna: this.namaDaftar
+            })
+        } else {
+            console.log('bad!')
+            return false
+        }
     }
-    // ketikaTombolKeluarDiKlik() {
-    //     this.$store.dispatch('pengguna/keluar')
-    //     this.$emit('keluar')
-    // }
   }
 }
 </script>
