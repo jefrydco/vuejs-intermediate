@@ -1,6 +1,7 @@
 import { stringifyUrl } from 'query-string'
 import { kirimData } from '../utils'
 import { URL_API, OPSI_STRINGIFY } from '../constants'
+import { router } from '../main'
 
 function state() {
   return {
@@ -49,10 +50,11 @@ const actions = {
       commit('resetDaftarKode')
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu1'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
@@ -87,10 +89,11 @@ const actions = {
     } catch (error) {
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu2'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
@@ -126,10 +129,11 @@ const actions = {
     } catch (error) {
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu3'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
@@ -158,10 +162,11 @@ const actions = {
     } catch (error) {
       const dataNotifikasiGalat = {
         apakahTampil: true,
-        pesan: error.message || 'Silahkan masuk terlebih dahulu4'
+        pesan: error.message || 'Silahkan masuk terlebih dahulu'
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
