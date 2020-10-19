@@ -68,7 +68,7 @@ const routes = [
   { path: '/convert', component: AppConvertPage }
 ]
 
-const router = new VueRouter({
+export const router = new VueRouter({
   routes,
   mode: 'history'
 })
