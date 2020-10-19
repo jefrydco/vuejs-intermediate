@@ -96,6 +96,7 @@ const actions = {
       pesan: 'Berhasil keluar'
     }
     dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasi, { root: true })
+    router.push({path: 'login'})
   }
 }
 
