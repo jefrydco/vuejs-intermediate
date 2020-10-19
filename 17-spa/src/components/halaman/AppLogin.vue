@@ -42,7 +42,7 @@
 export default {
     data(){
         return {
-            namaMasuk: '',
+            namaMasuk: 'yuza',
             namaDaftar: '',
             toggled: false
         }
