@@ -1,36 +1,44 @@
 <template>
   <main>
-    <app-bagian-editor-opsi
-      :input-kode="dataKode.inputKode"
-      :bahasa-pemrograman-terpilih.sync="dataKode.bahasaPemrogramanTerpilih"
-      :twoslash-terpilih.sync="dataKode.twoslashTerpilih"
-      :nama-berkas.sync="dataKode.namaBerkas"
-      :highlight.sync="dataKode.highlight"
-      :hasil-highlight="hasilHighlight"
-      @tersimpan="dapatkanDaftarKode"
-      @reset="ketikaTombolResetDiKlik"
-    />
-    <hr>
-    <app-bagian-editor-kode
-      :input-kode.sync="dataKode.inputKode"
-      :hasil-highlight="hasilHighlight"
-      :bahasa-pemrograman-terpilih="dataKode.bahasaPemrogramanTerpilih"
-    />
-    <hr>
-    <div v-if="$store.state.pengguna.idPengguna">
-      <app-bagian-opsi-daftar-kode
-        :halaman.sync="filter.halaman"
-        :banyak-data.sync="filter.banyakData"
-        :urutkan-berdasarkan.sync="filter.urutkanBerdasarkan"
-        :urutkan.sync="filter.urutkan"
-        :apakah-highlight-menyala.sync="filter.apakahHighlightMenyala"
-      />
-      <hr>
-      <app-bagian-daftar-kode
-        :apakah-highlight-menyala="filter.apakahHighlightMenyala"
-        :dapatkan-daftar-kode="dapatkanDaftarKode"
-      />
-    </div>
+    <i-container fluid>
+      <i-row>
+        <i-column xs>
+          <app-bagian-editor-opsi
+            :input-kode="dataKode.inputKode"
+            :bahasa-pemrograman-terpilih.sync="dataKode.bahasaPemrogramanTerpilih"
+            :twoslash-terpilih.sync="dataKode.twoslashTerpilih"
+            :nama-berkas.sync="dataKode.namaBerkas"
+            :highlight.sync="dataKode.highlight"
+            :hasil-highlight="hasilHighlight"
+            @tersimpan="dapatkanDaftarKode"
+            @reset="ketikaTombolResetDiKlik"
+          />
+        </i-column>
+        <i-column xs>
+          <app-bagian-editor-kode
+            :input-kode.sync="dataKode.inputKode"
+            :hasil-highlight="hasilHighlight"
+            :bahasa-pemrograman-terpilih="dataKode.bahasaPemrogramanTerpilih"
+          />
+        </i-column>
+        <i-column xs>
+          <div v-if="$store.state.pengguna.idPengguna">
+            <app-bagian-opsi-daftar-kode
+              :halaman.sync="filter.halaman"
+              :banyak-data.sync="filter.banyakData"
+              :urutkan-berdasarkan.sync="filter.urutkanBerdasarkan"
+              :urutkan.sync="filter.urutkan"
+              :apakah-highlight-menyala.sync="filter.apakahHighlightMenyala"
+            />
+            <hr>
+            <app-bagian-daftar-kode
+              :apakah-highlight-menyala="filter.apakahHighlightMenyala"
+              :dapatkan-daftar-kode="dapatkanDaftarKode"
+            />
+          </div>
+        </i-column>
+      </i-row>
+    </i-container>
     <app-notifikasi />
     <app-proses />
   </main>
