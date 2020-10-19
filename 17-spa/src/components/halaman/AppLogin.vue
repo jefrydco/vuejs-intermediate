@@ -25,7 +25,7 @@
                     </div>
                     <div class="input-wrapper">
                         <i-input v-show="toggled == false" v-model="namaMasuk" placeholder="Masukkan Nama">
-                            <i-button slot="append" @click="ketikaTombolMasukDiKlik">Masuk</i-button>
+                            <i-button slot="append" @click="ketikaTombolMasukDiKlik">MASUK</i-button>
                         </i-input>
                         <i-input v-show="toggled == true" v-model="namaDaftar" placeholder="Masukkan Nama">
                             <i-button slot="append" @click="ketikaTombolDaftarDiKlik">DAFTAR</i-button>
@@ -35,11 +35,21 @@
             </i-column>
         </i-row>
     </i-container>
+
+    <app-notifikasi />
+    <app-proses />
   </section>
 </template>
 
 <script>
+import AppNotifikasi from '../AppNotifikasi'
+import AppProses from '../AppProses'
+
 export default {
+    components: {
+        AppNotifikasi,
+        AppProses
+    },
     data(){
         return {
             namaMasuk: 'yuza',
