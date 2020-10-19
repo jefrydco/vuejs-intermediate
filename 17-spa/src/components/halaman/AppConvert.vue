@@ -1,6 +1,6 @@
 <template>
   <main>
-    <!-- <app-bagian-pengguna
+    <app-bagian-pengguna
       @keluar="ketikaTombolResetDiKlik"
     />
     <hr>
@@ -36,7 +36,7 @@
       />
     </div>
     <app-notifikasi />
-    <app-proses /> -->
+    <app-proses />
   </main>
 </template>
 
@@ -45,21 +45,21 @@ import { stringifyUrl } from 'query-string'
 import debounce from 'debounce-fn'
 import cleanDeep from 'clean-deep'
 
-// import AppBagianPengguna from './components/bagian/AppBagianPengguna'
-// import AppBagianEditorOpsi from './components/bagian/AppBagianEditorOpsi'
-// import AppBagianEditorKode from './components/bagian/AppBagianEditorKode'
-// import AppBagianOpsiDaftarKode from './components/bagian/AppBagianOpsiDaftarKode'
-// import AppBagianDaftarKode from './components/bagian/AppBagianDaftarKode'
+import AppBagianPengguna from '../bagian/AppBagianPengguna'
+import AppBagianEditorOpsi from '../bagian/AppBagianEditorOpsi'
+import AppBagianEditorKode from '../bagian/AppBagianEditorKode'
+import AppBagianOpsiDaftarKode from '../bagian/AppBagianOpsiDaftarKode'
+import AppBagianDaftarKode from '../bagian/AppBagianDaftarKode'
 
-// import AppNotifikasi from './components/AppNotifikasi'
-// import AppProses from './components/AppProses'
+import AppNotifikasi from '../AppNotifikasi'
+import AppProses from '../AppProses'
 
-import { dapatkanOpsi, kirimData, unduhKode } from './utils'
-import { URL_API, OPSI_STRINGIFY } from './constants'
+import { dapatkanOpsi, kirimData, unduhKode } from '../../utils'
+import { URL_API, OPSI_STRINGIFY } from '../../constants'
 
 export default {
   name: 'App',
-  /*components: {
+  components: {
     AppBagianPengguna,
     AppBagianEditorOpsi,
     AppBagianEditorKode,
@@ -68,7 +68,7 @@ export default {
 
     AppNotifikasi,
     AppProses
-  },*/
+  },
   data() {
     return {
       dataKode: {
