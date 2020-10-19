@@ -1,6 +1,7 @@
 import { stringifyUrl } from 'query-string'
 import { kirimData } from '../utils'
 import { URL_API, OPSI_STRINGIFY } from '../constants'
+import { router } from '../main'
 
 function state() {
   return {
@@ -11,6 +12,7 @@ function state() {
 const mutations = {
   aturDaftarKode(state, { daftarKode }) {
     state.daftarKode = daftarKode
+    console.log(state.daftarKode)
   },
   resetDaftarKode(state) {
     state.daftarKode = []
@@ -52,6 +54,7 @@ const actions = {
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
@@ -90,6 +93,7 @@ const actions = {
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
@@ -129,6 +133,7 @@ const actions = {
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
@@ -161,6 +166,7 @@ const actions = {
       }
       dispatch('notifikasi/tampilkanNotifikasi', dataNotifikasiGalat, { root: true })
       console.log(error)
+      router.push({path: 'login'})
     } finally {
       dispatch('proses/hilangkanProses', null, { root: true })
     }
