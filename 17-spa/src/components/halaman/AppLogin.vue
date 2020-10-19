@@ -46,7 +46,23 @@ export default {
             namaDaftar: '',
             toggled: false
         }
+    },
+    methods: {
+    ketikaTombolMasukDiKlik() {
+        this.$store.dispatch('pengguna/masuk', {
+            namaPengguna: this.namaMasuk
+        })
+    },
+    ketikaTombolDaftarDiKlik() {
+        this.$store.dispatch('pengguna/daftar', {
+            namaPengguna: this.namaDaftar
+        })
     }
+    // ketikaTombolKeluarDiKlik() {
+    //     this.$store.dispatch('pengguna/keluar')
+    //     this.$emit('keluar')
+    // }
+  }
 }
 </script>
 
