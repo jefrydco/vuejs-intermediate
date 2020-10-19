@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 section {
     height: 100vh;
     background-color: #56BAED;
