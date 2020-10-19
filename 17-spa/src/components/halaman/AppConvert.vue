@@ -1,9 +1,5 @@
 <template>
   <main>
-    <app-bagian-pengguna
-      @keluar="ketikaTombolResetDiKlik"
-    />
-    <hr>
     <app-bagian-editor-opsi
       :input-kode="dataKode.inputKode"
       :bahasa-pemrograman-terpilih.sync="dataKode.bahasaPemrogramanTerpilih"
@@ -45,7 +41,6 @@ import { stringifyUrl } from 'query-string'
 import debounce from 'debounce-fn'
 import cleanDeep from 'clean-deep'
 
-import AppBagianPengguna from '../bagian/AppBagianPengguna'
 import AppBagianEditorOpsi from '../bagian/AppBagianEditorOpsi'
 import AppBagianEditorKode from '../bagian/AppBagianEditorKode'
 import AppBagianOpsiDaftarKode from '../bagian/AppBagianOpsiDaftarKode'
@@ -60,7 +55,6 @@ import { URL_API, OPSI_STRINGIFY } from '../../constants'
 export default {
   name: 'App',
   components: {
-    AppBagianPengguna,
     AppBagianEditorOpsi,
     AppBagianEditorKode,
     AppBagianOpsiDaftarKode,
