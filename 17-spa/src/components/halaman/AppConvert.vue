@@ -1,6 +1,7 @@
 <template>
   <main>
     <i-container fluid>
+      <i-button @click="ketikaTombolKeluarDiKlik" variant="primary">KELUAR</i-button>
       <i-row>
         <i-column xs>
           <app-bagian-editor-opsi
@@ -116,6 +117,10 @@ export default {
     await this.dapatkanDaftarKode()
   },
   methods: {
+    ketikaTombolKeluarDiKlik() {
+      this.$store.dispatch('pengguna/keluar')
+      this.$emit('keluar')
+    },
     ketikaTombolResetDiKlik() {
       this.dataKode = {
         inputKode: null,
