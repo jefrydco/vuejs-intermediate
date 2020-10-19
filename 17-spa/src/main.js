@@ -56,12 +56,20 @@ const store = new Vuex.Store({
 })
 
 const routes = [
+  { 
+    path: '/', 
+    component: AppLoginPage,
+    beforeEnter: (to) => {
+      console.log(to)
+    } 
+  },
   { path: '/login', component: AppLoginPage },
   { path: '/convert', component: AppLoginPage }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 })
 
 new Vue({
